@@ -1,0 +1,48 @@
+<div id="<%= dom_id project %>" class="text-white">
+
+  <div class="container">
+    <div class="row my-5">
+      <div class="col-sm-12 col-md-6 p-0 px-2">
+        <div class="m-2 my-3">
+          <h1 class="fs-1">
+            <%= project.title %>
+          </h1>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 p-0 ">
+        <div class="images d-flex justify-content-center">
+          <% project.images.each do |image| %>
+            <%= image_tag(image, style: "width: 100%;") %>
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="m-2">
+        <div class="row">
+          <div class="d-flex justify-content-around">
+            <a href="<%= project.repo_link %>" 
+                class="btn btn-dark" 
+                tabindex="-1" 
+                role="button" 
+                aria-disabled="true"
+                target="blank">
+                Repo Link
+            </a>
+            <a href="<%= project.deployed_link %>" 
+                class="btn btn-dark" 
+                tabindex="-1" 
+                role="button" 
+                aria-disabled="true"
+                target="blank">
+                Deployed App
+            </a>
+            <div class="btn btn-dark">
+            <%= link_to "Show This Project", project , style: "color: white; text-decoration: none; align-self: center;"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

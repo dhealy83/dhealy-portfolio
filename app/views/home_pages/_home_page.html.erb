@@ -1,0 +1,11 @@
+<div id="<%= dom_id home_page %>" class="text-white">
+  <p>
+    <%= home_page.title %>
+  </p>
+  <p>
+  <% home_page.images.each do |image|%>
+    <%= image_tag(image) %>
+  <% end %>
+  </p>
+
+</div>
