@@ -8,6 +8,7 @@ class HomePagesController < ApplicationController
 
   # GET /home_pages/1 or /home_pages/1.json
   def show
+    @title = @home_page.title
   end
 
   # GET /home_pages/new
@@ -65,6 +66,6 @@ class HomePagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def home_page_params
-      params.require(:home_page).permit(:title, images: [])
+      params.require(home_page).permit(:title, images: [])
     end
 end
